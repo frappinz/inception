@@ -18,7 +18,8 @@ if [ ! -f "/var/www/html/wordpress/index.php" ]; then
     wp config create --dbname=$WP_DATABASE_NAME --dbuser=$WP_DATABASE_USR --dbpass=$WP_DATABASE_PWD --dbhost=$MYSQL_HOST --dbcharset="utf8" --dbcollate="utf8_general_ci" --allow-root
     wp core install --url=$DOMAIN_NAME --title=$WP_TITLE --admin_user=$WP_ADMIN_USR --admin_password=$WP_ADMIN_PWD --admin_email=$WP_ADMIN_EMAIL --skip-email --allow-root
     wp user create $WP_USR $WP_EMAIL --role=author --user_pass=$WP_PWD --allow-root
-    wp theme install inspiro --activate --allow-root
+	wp theme install inspiro --activate --allow-root
+    #wp theme install inspiro --activate --allow-root
 
     # enable redis cache
     # sed -i "40i define( 'WP_REDIS_HOST', '$REDIS_HOST' );"      wp-config.php
