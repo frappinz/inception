@@ -8,7 +8,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - "~/Desktop/inception/website:/var/www/html"
+      - "~/data/inception/website:/var/www/html"
     depends_on:
       - wordpress
     networks:
@@ -21,7 +21,7 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - "~/Desktop/inception/website:/var/www/html"
+      - "~/data/inception/website:/var/www/html"
     depends_on:
       - mariadb
     networks:
@@ -37,7 +37,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - "~/Desktop/inception/mariadb:/var/lib/mysql"
+      - "~/data/inception/mariadb:/var/lib/mysql"
     networks:
       - backend
     restart: always
