@@ -59,8 +59,6 @@ RUN	adduser -S nginx &&	addgroup -S nginx
 COPY conf/php-fpm.conf /etc/php7/php-fpm.conf
 COPY conf/www.conf /etc/php7/php-fpm.d/www.conf
 
-# static website
-# COPY conf/index.html /tmp/index.html
 
 # install wordpress
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
